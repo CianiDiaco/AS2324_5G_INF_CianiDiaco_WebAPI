@@ -52,7 +52,14 @@ namespace AS2324_5G_INF_CianiDiaco_WebAPI.Controllers
             string status_result = "OK";
             string message = "Errore";
 
-            if
+            if((anno % 400 == 0) || (anno % 4 == 0 && anno % 100 != 0))
+            {
+                message = "anno bisestile";
+            }
+            else
+            {
+                message = "anno non bisestile";
+            }
         }
 
         [HttpGet("GetIpotenusa")]
