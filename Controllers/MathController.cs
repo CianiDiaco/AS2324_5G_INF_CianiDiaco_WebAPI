@@ -47,8 +47,35 @@ namespace AS2324_5G_INF_CianiDiaco_WebAPI.Controllers
 
         [HttpGet("GetBisestile")]
 
-        
+        public JsonResult GetBisestile(int anno)
+        {
+            string status_result = "OK";
+            string message = "Errore";
 
+            if
+        }
+
+        [HttpGet("GetIpotenusa")]
+
+        public JsonResult GetIpotenusa(double cateto1, double cateto2)
+        {
+            string status_result = "OK";
+            string message = "Errore";
+            double res = 0;
+
+            if((cateto1 == 0) || (cateto2 == 0))
+            {
+                status_result = "KO";
+                message = "Valore non calcolabile";
+            }
+            else
+            {
+                res = Math.Sqrt((cateto1 * cateto1) + (cateto2 * cateto2));
+                message = "Valore calcolato";
+                status_result = "OK";
+            }
+            return Json(new { ipotenusa = res, output = message, status = status_result });
+        }
         public IActionResult Index()
         {
             return View();
