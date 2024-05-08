@@ -60,6 +60,7 @@ namespace AS2324_5G_INF_CianiDiaco_WebAPI.Controllers
             {
                 message = "anno non bisestile";
             }
+            return Json(new {anno = anno, status = status_result, message = message});
         }
 
         [HttpGet("GetIpotenusa")]
