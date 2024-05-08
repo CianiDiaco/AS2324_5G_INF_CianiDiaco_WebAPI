@@ -63,6 +63,7 @@ namespace AS2324_5G_INF_CianiDiaco_WebAPI.Controllers
             return Json(new {anno = anno, status = status_result, message = message});
         }
 
+
         [HttpGet("GetIpotenusa")]
 
         public JsonResult GetIpotenusa(double cateto1, double cateto2)
